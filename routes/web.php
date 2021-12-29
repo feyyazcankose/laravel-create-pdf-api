@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('cappdf' ,[App\Http\Controllers\pdfController::class,"cappdf"]
+);
+Route::get('yazpdf' ,[App\Http\Controllers\pdfController::class,"yazpdf"]
+);
+Route::get('derspdf' ,[App\Http\Controllers\pdfController::class,"derspdf"]
+);
+Route::get('dgspdf' ,[App\Http\Controllers\pdfController::class,"dgspdf"]
+);
+Route::get('yataypdf' ,[App\Http\Controllers\pdfController::class,"yataypdf"]
+);
