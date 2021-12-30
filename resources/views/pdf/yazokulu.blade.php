@@ -12,7 +12,7 @@
    table{
     border: 1px solid black;
    }
-  
+
 </style>
 
 </head>
@@ -20,24 +20,24 @@
     <h1 style="text-align:center;font-weight: normal;  ">Kocaeli Üniversitesi</h1>
     <div style="font-weight: normal; text-align:center; font-size:20px;">YazOkulu Başvuru Formu </div>
 
-    <h2 style=" font-weight: normal;  
+    <h2 style=" font-weight: normal;
  ">
         Öğrenci bilgileri
 	</h2>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">TC:</div> <br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">TC: {{tc}}</div> <br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Ad Soyad:</div> <br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Ad Soyad: {{name}}</div> <br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Öğrenci No: </div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Öğrenci No: {{ogrenci}}</div><br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Fakülte: </div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Fakülte: {{fakulte}}</div><br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Bölüm: </div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Bölüm: {{bolum}}</div><br>
        <div style="
-       margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Sınıf: </div><br>
+       margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Sınıf: {{sinif}}</div><br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: </div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: {{email}}</div><br>
     <div style="
     margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;" >PhoneNo: </div>
 
@@ -74,7 +74,7 @@ width: 200px;
 height:110px;
 
 padding: 5px;"> öğernci imza </div>
-  
+
 
 
 </body>

@@ -12,7 +12,7 @@
    table{
     border: 1px solid black;
    }
-  
+
 </style>
 
 </head>
@@ -20,23 +20,23 @@
     <h1 style="text-align:center;font-weight: normal;  ">Kocaeli Üniversitesi</h1>
     <div style="font-weight: normal; text-align:center; font-size:20px;">Ders İntibak Başvuru</div>
 
-    <h2 style=" font-weight: normal;  
+    <h2 style=" font-weight: normal;
  ">
         Öğrenci bilgileri
 	</h2>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">TC:</div> <br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">TC: {{tc}}</div> <br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Ad Soyad:</div> <br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Ad Soyad: {{name}}</div> <br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Öğrenci No: </div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Öğrenci No: {{ogrenci}}</div><br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Fakülte: </div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Fakülte: {{fakulte}}</div><br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Bölüm: </div><br>
-   
+    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Bölüm: {{bolum}}</div><br>
+
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: </div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: {{email}}</div><br>
     <div style="
     margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;" >PhoneNo: </div>
 
@@ -46,20 +46,20 @@ margin-right: auto; margin-top:70px" >
       <th style="  border: 1px solid black;">No</th>
       <th style="  border: 1px solid black;">Ders AKTS</th>
       <th style="  border: 1px solid black;">Ders Başarı Notu</th>
-    
+
     </tr>
     <tr>
         <td style="  border: 1px solid black;">1</td>
          <td style="  border: 1px solid black;">Maria Anders</td>
         <td style="  border: 1px solid black;">>Germany</td>
-     
+
 
     </tr>
     <tr>
         <td style="  border: 1px solid black;">2</td>
         <td style="  border: 1px solid black;">Francisco Chang</td>
         <td style="  border: 1px solid black;">Mexico</td>
-     
+
     </tr>
   </table>
 
@@ -70,7 +70,7 @@ width: 200px;
 height:110px;
 
 padding: 5px;"> öğernci imza </div>
-  
+
 
 
 </body>

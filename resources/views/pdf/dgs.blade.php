@@ -9,8 +9,8 @@
   * {
       font-family: "DejaVu Sans Mono", monospace;
     },
- 
-  
+
+
 </style>
 
 </head>
@@ -18,36 +18,36 @@
     <h1 style="text-align:center;font-weight: normal;  ">Kocaeli Üniversitesi</h1>
     <div style="font-weight: normal; text-align:center; font-size:20px;">Dikey Geçiş Başvuru </div>
 
-    <h2 style=" font-weight: normal;  
+    <h2 style=" font-weight: normal;
  ">
         Öğrenci bilgileri
 	</h2>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">TC:</div> <br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">TC: {{tc}}</div> <br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Ad Soyad:</div> <br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Ad Soyad: {{name}}</div> <br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Öğrenci No: </div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Öğrenci No: {{ogrenci}}</div><br>
      <div style="
-     margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Uyruk: </div><br>
-  
+     margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Uyruk: TC</div><br>
+
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: </div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: {{email}}</div><br>
     <div style="
     margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;" >Telefon No: </div>
-     <h2 style=" font-weight: normal;  
+     <h2 style=" font-weight: normal;
      ">
             Eğitim bilgileri
         </h2>
         <div style="
-        margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Üniversite Adı:</div> <br>
+        margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Üniversite Adı: {{title}}</div> <br>
         <div style="
-        margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Program: </div><br>
+        margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Program: {{bolum}}</div><br>
         <div style="
         margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Diploma Notu: </div><br>
           <div style="
           margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Mezun Yılı: </div>
-          <h2 style=" font-weight: normal;  
+          <h2 style=" font-weight: normal;
           ">Sınav Merkez Tercihi  </h2>
           <div style="
           margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Merkez Tercihi: </div>
@@ -57,9 +57,9 @@
   right: 0px; bottom: 0px;
   width: 200px;
   height:110px;
-  
+
   padding: 5px;"> öğernci imza </div>
-  
+
 
 
 </body>
