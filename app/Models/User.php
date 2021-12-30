@@ -22,6 +22,12 @@ class User extends Authenticatable
         'name',
         'ogrenci',
         'email',
+        'bolum',
+        'fakulte',
+        'sinif',
+        'dogum',
+        'tc',
+        'rol',
         'password',
     ];
 
