@@ -6,13 +6,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use PDF;
 
-
 class pdfController extends Controller
 {
 
     public function cappdf(Request $request){
-
-
         $user = Auth::user();
         //dd($request);
         if($user!=null){
@@ -30,7 +27,7 @@ class pdfController extends Controller
               'cap'=>$request->cap,
           ];
           $pdf = PDF::loadView('pdf.cap',$data);
-          return $pdf->download ('capbasvuru.pdf');
+          return $pdf->download('capbasvuru.pdf');
         }
         return view('welcome');
 
@@ -115,4 +112,6 @@ class pdfController extends Controller
       }
       return view("welcome");
     }
+
+    
 }

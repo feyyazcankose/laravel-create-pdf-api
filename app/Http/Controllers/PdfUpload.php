@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use App\Models\Pdf;
 class PdfUpload extends Controller
 {
     public function upload(Request $request)
     {
         $user = Auth::user();
-        $time=Carbon::now()->format('dmYs');
+
 
         //i,ü,ö,ğ,ç Formatlı
         $username=str_replace(' ','_',strtolower($user->name));
@@ -21,14 +22,41 @@ class PdfUpload extends Controller
         $username=str_replace('ç','c',$username);
 
 
+        if($request!=null)
+        {
 
-        $filename=$username.'_'.$user->ogrenci.'_'.$time.'.'.$request->pdf->getClientOriginalExtension();
-        $yukle=$request->pdf->move(public_path('pdf/'.$request->tip),$filename);
+          $time=Carbon::now()->format('dmYs');
+          $basvuru_tip=$request->tip;
 
-        if($yukle)
-          return "Başarılı";
+          $filename=$username.'_'.$user->ogrenci.'_'.$time.'.'.$request->pdf->getClientOriginalExtension();
+          $yukle=$request->pdf->move(public_path('pdf/'.$basvuru_tip),$filename);
 
-        return "Başarısız";
+          $path=str_replace("file:///","",public_path());
+          $path=$path.'\\pdf\\'.$basvuru_tip.'\\'.$filename;
+          $durum="";
+          if($yukle)
+          {
+              $durum="başarılı";
+              Pdf::create([
+                "ogrenci_id"=>$user->_id,
+                "filename"=>$filename,
+                "basvuru_tipi"=>$basvuru_tip,
+                "url"=>$path,
+                'durum'=>1,
+              ]);
+
+          }
+          else
+            $durum="başarısız";
+          $data=[
+            "durum"=>$durum
+          ];
+
+          return view('basvuru.'.$basvuru_tip,$data);
+
+        }
+
+          return "Dosya Seçilmedi!";
 
     }
 }

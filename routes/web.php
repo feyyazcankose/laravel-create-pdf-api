@@ -4,6 +4,8 @@
 use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\Userauth;
 use App\Http\Controllers\PdfUpload;
+use App\Http\Controllers\Director;
+use App\Http\Controllers\PdfListele;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,19 +29,27 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 //Pdf oluşturma
-Route::post('cappdf' ,[App\Http\Controllers\pdfController::class,"cappdf"])->name('create_cap');
-Route::post('yazpdf' ,[App\Http\Controllers\pdfController::class,"yazpdf"])->name('create_yaz');
-Route::post('derspdf' ,[App\Http\Controllers\pdfController::class,"derspdf"])->name('create_ders');
-Route::post('dgspdf' ,[App\Http\Controllers\pdfController::class,"dgspdf"])->name('create_dgs');
-Route::post('yataypdf' ,[App\Http\Controllers\pdfController::class,"yataypdf"])->name('create_yatay');
+Route::post('cappdf' ,[pdfController::class,"cappdf"])->name('create_cap');
+Route::post('yazpdf' ,[pdfController::class,"yazpdf"])->name('create_yaz');
+Route::post('derspdf' ,[pdfController::class,"derspdf"])->name('create_ders');
+Route::post('dgspdf' ,[pdfController::class,"dgspdf"])->name('create_dgs');
+Route::post('yataypdf' ,[pdfController::class,"yataypdf"])->name('create_yatay');
 
 //Başvuruların yapılacığı rotalar
-Route::get('basvur/cap',function (){return  view('basvuru.cap');});
+Route::get('basvur/cap',function (){return  view('basvuru.cap',["durum"=>"0"]);});
 Route::get('basvur/yaz',function (){return  view('basvuru.yaz');});
 Route::get('basvur/dgs',function (){return  view('basvuru.dgs');});
 Route::get('basvur/yatay',function (){return  view('basvuru.yatay');});
 Route::get('basvur/ders',function (){return  view('basvuru.ders');});
 
+//Companent
+Route::get('basvurularim',function (){return  view('companent.basvurularim');})->name('basvurularim');
+
+
+
 
 //PDF Yükleme
 Route::post('pdfupload',[PdfUpload::class, 'upload'])->name('pdf_yukle');
+
+//PDF Listeleme
+Route::get('sonuc' ,[PdfListele::class,"liste"])->name('sonuc');
