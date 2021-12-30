@@ -36,7 +36,7 @@
     <div style="
     margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: {{ $email }}</div><br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;" >Telefon No: </div>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;" >Telefon No: {{ $tel }}</div>
      <h2 style=" font-weight: normal;
      ">
             Eğitim bilgileri
@@ -48,11 +48,11 @@
         <div style="
         margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Sınıf: {{ $sinif }} </div><br>
           <div style="
-          margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Genel Not Ortalaması: </div>
+          margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Genel Not Ortalaması: {{ $notortalama }}</div>
           <h2 style=" font-weight: normal;
           ">Program Tercihi  </h2>
           <div style="
-          margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Program Tercihi: </div>
+          margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Program Tercihi: {{ $cap }}</div>
 
           <div style="
            position: fixed;

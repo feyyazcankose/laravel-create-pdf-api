@@ -18,7 +18,7 @@ class Pdf extends Migration
             $table->string('filename');
             $table->string('basvuru_tipi');
             $table->string('url');
-            $table->boolen('durum');
+            $table->('durum');
             $table->timestamps();
         });
     }

@@ -23,16 +23,16 @@
         Öğrenci bilgileri
 	</h2>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">TC: {{tc}}</div> <br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">TC: {{ $tc}}</div> <br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Ad Soyad: {{name}}</div> <br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Ad Soyad: {{ $name}}</div> <br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Öğrenci No: {{ogrenci}}</div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Öğrenci No: {{ $ogrenci}}</div><br>
      <div style="
      margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Uyruk: TC</div><br>
 
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: {{email}}</div><br>
+    margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: {{ $email}}</div><br>
     <div style="
     margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;" >Telefon No: </div>
      <h2 style=" font-weight: normal;
@@ -40,9 +40,9 @@
             Eğitim bilgileri
         </h2>
         <div style="
-        margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Üniversite Adı: {{title}}</div> <br>
+        margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Üniversite Adı: {{ $title}}</div> <br>
         <div style="
-        margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Program: {{bolum}}</div><br>
+        margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Program: {{ $bolum}}</div><br>
         <div style="
         margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Diploma Notu: </div><br>
           <div style="
