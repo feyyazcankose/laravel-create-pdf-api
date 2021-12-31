@@ -53,25 +53,21 @@ Route::get('basvur/ders',function (){return  view('basvuru.ders',["durum"=>"0"])
 //Route::get('basvurular',function (){return  view('companent.basvurularim');})->name('basvurularim');
 Route::get('basvur',[AdminKontrol::class, 'basvurular'])->name('basvuru');
 
-
-
-
-
 //PDF Yükleme
 Route::post('pdfupload',[PdfUpload::class, 'upload'])->name('pdf_yukle');
 
 //PDF Listeleme
 //Route::get('sonuc' ,[PdfListele::class,"sonuclar"])->name('sonuc');
 Route::get('basvuru/listele' ,[PdfListele::class,"listeleAuth"])->name('basvurularim');
-Route::get('basvuru/listele/{tip}' ,[PdfListele::class,"listele"]);
 
 
+
+
+
+
+//Admin Hareketleri
+Route::middleware('adminkontrol')->get('admin/raporlar' ,[Rapor::class,"raporlar"])->name('rapor');
+Route::middleware('adminkontrol')->get('admin/kullanicilar' ,[Rapor::class,"kullanici"])->name('kullanici');
+Route::middleware('adminkontrol')->get('basvuru/listele/{tip}' ,[PdfListele::class,"listele"]);
 //PDF Güncelleme
-Route::post('guncelle' ,[PdfGuncelle::class,"guncelle"])->name('guncelle');
-
-
-
-
-//Admin
-Route::get('admin/raporlar' ,[Rapor::class,"raporlar"])->name('rapor');
-Route::get('admin/kullanicilar' ,[Rapor::class,"kullanici"])->name('kullanici');
+Route::middleware('adminkontrol')->post('guncelle' ,[PdfGuncelle::class,"guncelle"])->name('guncelle');
