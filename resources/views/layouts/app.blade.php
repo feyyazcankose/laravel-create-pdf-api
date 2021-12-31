@@ -86,7 +86,7 @@
                             </li>
 
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Kullanıcılar</a>
+                              <a class="nav-link" href="{{ route('kullanici') }}">Kullanıcılar</a>
                                 </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="{{ route('basvuru') }}">Başvurular</a>

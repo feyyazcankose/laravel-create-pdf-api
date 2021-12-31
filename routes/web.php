@@ -9,6 +9,8 @@ use App\Http\Controllers\PdfListele;
 use App\Http\Controllers\PdfGuncelle;
 use App\Http\Controllers\pdfController;
 use App\Http\Controllers\AdminKontrol;
+use App\Http\Controllers\Rapor;
+
 
 
 
@@ -71,4 +73,5 @@ Route::post('guncelle' ,[PdfGuncelle::class,"guncelle"])->name('guncelle');
 
 
 //Admin
-Route::get('raporlar' ,function(){ return view('admin.rapor');})->name('rapor');
+Route::get('admin/raporlar' ,[Rapor::class,"raporlar"])->name('rapor');
+Route::get('admin/kullanicilar' ,[Rapor::class,"kullanici"])->name('kullanici');
