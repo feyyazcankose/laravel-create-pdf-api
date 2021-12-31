@@ -113,5 +113,5 @@ class pdfController extends Controller
       return view("welcome");
     }
 
-    
+
 }

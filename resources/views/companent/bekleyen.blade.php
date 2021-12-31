@@ -13,12 +13,12 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($users as $user)
+          @foreach ($basvurular as $basvuru)
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Otto</td>
+            <th scope="row">{{ strtoupper($basvuru->basvuru_tipi) }}</th>
+            <td>{{ $basvuru->_durum}}</td>
+            <td>{{ $basvuru->created_at }}</td>
+            <td> <a href="{{ asset($basvuru->url)}}" target="_blank">Dosya Görüntüle</a></td>
           </tr>
           @endforeach
 

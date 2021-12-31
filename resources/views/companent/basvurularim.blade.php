@@ -25,7 +25,7 @@
                     Yaz Okulu başvurunuzu yapmadan önce pdf oluşturun
                     oluşturduğunuz pdf yükleyerek başvurunuzu yapın.
                   </div>
-                  <a href="/basvur/cap" class="btn btn-primary">Görüntüle</a>
+                  <a href="{{ route('bekleme') }}" class="btn btn-primary">Görüntüle</a>
 
                 </div>
             </div>

@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PdfUpload;
 use App\Http\Controllers\Director;
 use App\Http\Controllers\PdfListele;
+use App\Http\Controllers\pdfController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,11 +38,11 @@ Route::post('dgspdf' ,[pdfController::class,"dgspdf"])->name('create_dgs');
 Route::post('yataypdf' ,[pdfController::class,"yataypdf"])->name('create_yatay');
 
 //Başvuruların yapılacığı rotalar
-Route::get('basvur/cap',function (){return  view('basvuru.cap',["durum"=>"0"]);});
-Route::get('basvur/yaz',function (){return  view('basvuru.yaz');});
-Route::get('basvur/dgs',function (){return  view('basvuru.dgs');});
-Route::get('basvur/yatay',function (){return  view('basvuru.yatay');});
-Route::get('basvur/ders',function (){return  view('basvuru.ders');});
+Route::get('basvur/cap',function (){return  view('basvuru.cap',["durum"=>"0"]);})->name("basvur_cap");
+Route::get('basvur/yaz',function (){return  view('basvuru.yaz',["durum"=>"0"]);})->name("basvur_yaz");
+Route::get('basvur/dgs',function (){return  view('basvuru.dgs',["durum"=>"0"]);})->name("basvur_dgs");
+Route::get('basvur/yatay',function (){return  view('basvuru.yatay',["durum"=>"0"]);})->name("basvur_yatay");
+Route::get('basvur/ders',function (){return  view('basvuru.ders',["durum"=>"0"]);})->name("basvur_ders");
 
 //Companent
 Route::get('basvurularim',function (){return  view('companent.basvurularim');})->name('basvurularim');
@@ -52,4 +54,5 @@ Route::get('basvurularim',function (){return  view('companent.basvurularim');})-
 Route::post('pdfupload',[PdfUpload::class, 'upload'])->name('pdf_yukle');
 
 //PDF Listeleme
-Route::get('sonuc' ,[PdfListele::class,"liste"])->name('sonuc');
+Route::get('sonuc' ,[PdfListele::class,"sonuclar"])->name('sonuc');
+Route::get('bekleme' ,[PdfListele::class,"beklemede"])->name('bekleme');
