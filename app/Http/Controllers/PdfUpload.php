@@ -29,11 +29,13 @@ class PdfUpload extends Controller
           $basvuru_tip=$request->tip;
 
           $filename=$username.'_'.$user->ogrenci.'_'.$time.'.'.$request->pdf->getClientOriginalExtension();
-          $yukle=$request->pdf->move(public_path('pdf/'.$basvuru_tip),$filename);
+          //$yukle=$request->pdf->move(public_path('pdf/'.$basvuru_tip),$filename);
+          $yukle=$request->pdf->storeAs("public/pdf/".$basvuru_tip,$filename);
 
-          $path=str_replace("file:///","",public_path());
-          $path=$path.'\\pdf\\'.$basvuru_tip.'\\'.$filename;
+          /*$path=str_replace("file:///","",public_path());
+          $path=$path.'\\pdf\\'.$basvuru_tip.'\\'.$filename;*/
           $durum="";
+          $yukle=str_replace("public","storage",$yukle);
           if($yukle)
           {
               $durum="başarılı";
@@ -41,7 +43,7 @@ class PdfUpload extends Controller
                 "ogrenci_id"=>$user->_id,
                 "filename"=>$filename,
                 "basvuru_tipi"=>$basvuru_tip,
-                "url"=>$path,
+                "url"=>$yukle,
                 'durum'=>1,
               ]);
 

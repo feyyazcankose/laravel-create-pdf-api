@@ -18,7 +18,7 @@
             <th scope="row">{{ strtoupper($basvuru->basvuru_tipi) }}</th>
             <td>{{ $basvuru->_durum}}</td>
             <td>{{ $basvuru->created_at }}</td>
-            <td> <a href="{{ $basvuru->url }}" target="_blank">Dosya Görüntüle</a></td>
+            <td> <a href="{{ asset($basvuru->url)}}" target="_blank">Dosya Görüntüle</a></td>
           </tr>
           @endforeach
 
