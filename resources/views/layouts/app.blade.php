@@ -54,6 +54,8 @@
                                 </li>
                             @endif
                         @else
+
+                        @if(Auth::user()->rol==1)
                         <li class="nav-item dropdown">
                           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                               Başvur
@@ -71,9 +73,25 @@
 
                           </div>
                         </li>
+                        @endif
+
+                        @if(Auth::user()->rol==1)
                         <li class="nav-item">
                               <a class="nav-link" href="{{ route('basvurularim') }}">Başvurularım</a>
-                        </li>
+                            </li>
+
+                        @else
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ route('rapor') }}">Raporlar</a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Kullanıcılar</a>
+                                </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="{{ route('basvuru') }}">Başvurular</a>
+                              </li>
+                        @endif
 
 
                             <li class="nav-item dropdown">
@@ -87,6 +105,8 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+
+
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

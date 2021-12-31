@@ -7,6 +7,8 @@ use App\Http\Controllers\PdfUpload;
 use App\Http\Controllers\Director;
 use App\Http\Controllers\PdfListele;
 use App\Http\Controllers\pdfController;
+use App\Http\Controllers\AdminKontrol;
+
 
 
 /*
@@ -26,7 +28,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [AdminKontrol::class, 'home'])->name('home');
 //Route::get('/auth', [Userauth::class, 'user']);
 
 
@@ -45,7 +47,9 @@ Route::get('basvur/yatay',function (){return  view('basvuru.yatay',["durum"=>"0"
 Route::get('basvur/ders',function (){return  view('basvuru.ders',["durum"=>"0"]);})->name("basvur_ders");
 
 //Companent
-Route::get('basvurularim',function (){return  view('companent.basvurularim');})->name('basvurularim');
+//Route::get('basvurular',function (){return  view('companent.basvurularim');})->name('basvurularim');
+Route::get('basvur',[AdminKontrol::class, 'basvurular'])->name('basvuru');
+
 
 
 
@@ -54,5 +58,11 @@ Route::get('basvurularim',function (){return  view('companent.basvurularim');})-
 Route::post('pdfupload',[PdfUpload::class, 'upload'])->name('pdf_yukle');
 
 //PDF Listeleme
-Route::get('sonuc' ,[PdfListele::class,"sonuclar"])->name('sonuc');
-Route::get('bekleme' ,[PdfListele::class,"beklemede"])->name('bekleme');
+//Route::get('sonuc' ,[PdfListele::class,"sonuclar"])->name('sonuc');
+Route::get('basvuru/listele' ,[PdfListele::class,"listeleAuth"])->name('basvurularim');
+Route::get('basvuru/listele/{tip}' ,[PdfListele::class,"listele"]);
+
+
+
+//Admin
+Route::get('raporlar' ,function(){ return view('admin.rapor');})->name('rapor');
