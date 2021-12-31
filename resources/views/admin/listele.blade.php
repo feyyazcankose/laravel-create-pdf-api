@@ -5,32 +5,10 @@
 
 <!-- Full screen modal -->
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+
 
 
 
@@ -69,11 +47,34 @@
             <tr>
               <th scope="row">{{ strtoupper($basvuru->ogrenci_name) }}</th>
               <th >{{ strtoupper($basvuru->basvuru_tipi) }}</th>
-              <td>{{ $basvuru->_durum}}</td>
+              <td>
+                  <form action="{{ route('guncelle') }}" method="post" id="durum-form{{ $basvuru->_id }}">
+                    @csrf
+                    <input type="hidden" name="pdfid" value="{{ $basvuru->_id }}">
+                    <select class="form-control" name="durum">
+                      @if($basvuru->durum==1)
+                        <option value="1" name="durum" selected>Beklemede</option>
+                        <option value="2" name="durum" >Onaylandı</option>
+                        <option value="3" name="durum" >Reddedildi</option>
+                      @elseif($basvuru->durum==2)
+                        <option value="1" name="durum" >Beklemede</option>
+                        <option value="2" name="durum" selected>Onaylandı</option>
+                        <option value="3" name="durum" >Reddedildi</option>
+                      @else
+                        <option value="1" name="durum" >Beklemede</option>
+                        <option value="2" name="durum" >Onaylandı</option>
+                        <option value="3" name="durum" selected>Beklemede</option>
+                      @endif
+
+                    </select>
+                  </form>
+
+              </td>
+
               <td>{{ $basvuru->created_at }}</td>
               <td><a href="{{ asset($basvuru->url)}}" target="_blank">Dosya Görüntüle</a></td>
               <td>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Başvuru Güncelle</button>
+                <a href="#" class="btn btn-primary" onclick="event.preventDefault(); document.getElementById('durum-form{{ $basvuru->_id }}').submit();" >Güncelle</a>
               </td>
             </tr>
             @endforeach
@@ -100,11 +101,34 @@
           <tr>
             <th scope="row">{{ strtoupper($basvuru->ogrenci_name) }}</th>
             <th >{{ strtoupper($basvuru->basvuru_tipi) }}</th>
-            <td>{{ $basvuru->_durum}}</td>
-            <td>{{ $basvuru->created_at }}</td>
-            <td> <a href="{{ asset($basvuru->url)}}" target="_blank">Dosya Görüntüle</a></td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Başvuru Güncelle</button>
+                <form action="{{ route('guncelle') }}" method="post" id="durum-form{{ $basvuru->_id }}">
+                  @csrf
+                  <input type="hidden" name="pdfid" value="{{ $basvuru->_id }}">
+                  <select class="form-control" name="durum">
+                    @if($basvuru->durum==1)
+                      <option value="1" name="durum" selected>Beklemede</option>
+                      <option value="2" name="durum" >Onaylandı</option>
+                      <option value="3" name="durum" >Reddedildi</option>
+                    @elseif($basvuru->durum==2)
+                      <option value="1" name="durum" >Beklemede</option>
+                      <option value="2" name="durum" selected>Onaylandı</option>
+                      <option value="3" name="durum" >Reddedildi</option>
+                    @else
+                      <option value="1" name="durum" >Beklemede</option>
+                      <option value="2" name="durum" >Onaylandı</option>
+                      <option value="3" name="durum" selected>Beklemede</option>
+                    @endif
+
+                  </select>
+                </form>
+
+            </td>
+
+            <td>{{ $basvuru->created_at }}</td>
+            <td><a href="{{ asset($basvuru->url)}}" target="_blank">Dosya Görüntüle</a></td>
+            <td>
+              <a href="#" class="btn btn-primary" onclick="event.preventDefault(); document.getElementById('durum-form{{ $basvuru->_id }}').submit();" >Güncelle</a>
             </td>
           </tr>
           @endforeach
@@ -136,11 +160,34 @@
           <tr>
             <th scope="row">{{ strtoupper($basvuru->ogrenci_name) }}</th>
             <th >{{ strtoupper($basvuru->basvuru_tipi) }}</th>
-            <td>{{ $basvuru->_durum}}</td>
-            <td>{{ $basvuru->created_at }}</td>
-            <td> <a href="{{ asset($basvuru->url)}}" target="_blank">Dosya Görüntüle</a></td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Başvuru Güncelle</button>
+                <form action="{{ route('guncelle') }}" method="post" id="durum-form{{ $basvuru->_id }}">
+                  @csrf
+                  <input type="hidden" name="pdfid" value="{{ $basvuru->_id }}">
+                  <select class="form-control" name="durum">
+                    @if($basvuru->durum==1)
+                      <option value="1" name="durum" selected>Beklemede</option>
+                      <option value="2" name="durum" >Onaylandı</option>
+                      <option value="3" name="durum" >Reddedildi</option>
+                    @elseif($basvuru->durum==2)
+                      <option value="1" name="durum" >Beklemede</option>
+                      <option value="2" name="durum" selected>Onaylandı</option>
+                      <option value="3" name="durum" >Reddedildi</option>
+                    @else
+                      <option value="1" name="durum" >Beklemede</option>
+                      <option value="2" name="durum" >Onaylandı</option>
+                      <option value="3" name="durum" selected>Reddedildi</option>
+                    @endif
+
+                  </select>
+                </form>
+
+            </td>
+
+            <td>{{ $basvuru->created_at }}</td>
+            <td><a href="{{ asset($basvuru->url)}}" target="_blank">Dosya Görüntüle</a></td>
+            <td>
+              <a href="#" class="btn btn-primary" onclick="event.preventDefault(); document.getElementById('durum-form{{ $basvuru->_id }}').submit();" >Güncelle</a>
             </td>
           </tr>
           @endforeach

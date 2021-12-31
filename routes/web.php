@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PdfUpload;
 use App\Http\Controllers\Director;
 use App\Http\Controllers\PdfListele;
+use App\Http\Controllers\PdfGuncelle;
 use App\Http\Controllers\pdfController;
 use App\Http\Controllers\AdminKontrol;
 
@@ -61,6 +62,11 @@ Route::post('pdfupload',[PdfUpload::class, 'upload'])->name('pdf_yukle');
 //Route::get('sonuc' ,[PdfListele::class,"sonuclar"])->name('sonuc');
 Route::get('basvuru/listele' ,[PdfListele::class,"listeleAuth"])->name('basvurularim');
 Route::get('basvuru/listele/{tip}' ,[PdfListele::class,"listele"]);
+
+
+//PDF Güncelleme
+Route::post('guncelle' ,[PdfGuncelle::class,"guncelle"])->name('guncelle');
+
 
 
 
