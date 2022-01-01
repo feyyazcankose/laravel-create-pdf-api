@@ -30,7 +30,6 @@
   </ul>
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-      <div class="row">
         <table class="table">
           <thead>
             <tr>
@@ -51,7 +50,7 @@
                   <form action="{{ route('guncelle') }}" method="post" id="durum-form{{ $basvuru->_id }}">
                     @csrf
                     <input type="hidden" name="pdfid" value="{{ $basvuru->_id }}">
-                    <select class="form-control" name="durum">
+                    <select class="input" name="durum">
                       @if($basvuru->durum==1)
                         <option value="1" name="durum" selected>Beklemede</option>
                         <option value="2" name="durum" >Onaylandı</option>
@@ -81,7 +80,6 @@
 
           </tbody>
           </table>
-      </div>
     </div>
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <table class="table">
@@ -105,7 +103,7 @@
                 <form action="{{ route('guncelle') }}" method="post" id="durum-form{{ $basvuru->_id }}">
                   @csrf
                   <input type="hidden" name="pdfid" value="{{ $basvuru->_id }}">
-                  <select class="form-control" name="durum">
+                  <select class="input" name="durum">
                     @if($basvuru->durum==1)
                       <option value="1" name="durum" selected>Beklemede</option>
                       <option value="2" name="durum" >Onaylandı</option>
@@ -164,7 +162,7 @@
                 <form action="{{ route('guncelle') }}" method="post" id="durum-form{{ $basvuru->_id }}">
                   @csrf
                   <input type="hidden" name="pdfid" value="{{ $basvuru->_id }}">
-                  <select class="form-control" name="durum">
+                  <select class="input" name="durum">
                     @if($basvuru->durum==1)
                       <option value="1" name="durum" selected>Beklemede</option>
                       <option value="2" name="durum" >Onaylandı</option>

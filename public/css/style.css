@@ -1,0 +1,907 @@
+
+*{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+:root{
+
+  /* Main Colors */
+    --black:#212024;
+    --lightBlack: #393939;
+    --almostBlack: #2C2D30;
+    --gray:#C7CFD6;
+    --lightGray:#E5E5E5;
+    --white: white;
+
+  /* Transparent */
+
+  --gray-18:rgba(199, 207, 214, 0.18);
+  --gray-50:rgba(199, 207, 214, 0.5);
+  --gray-8:rgba(199, 207, 214, 0.08);
+
+  /* Gradient */
+  --blue-grad: linear-gradient(225deg, #9379FF 0%, #5EC9FF 100%);
+  --green-grad:  linear-gradient(181.04deg, #53CF8A 0.89%, #32B0E6 140.51%);
+
+  /* Theme Colors */
+
+  --blue: #3BACD9;
+  --red:#D9506B;
+  --orange:#D98425;
+  --green: #82D930;
+  --purple:#9379FF;
+  --seledyn:#32E6B7;
+  --pink:#CA50D9;
+  --yellow:#D9CF25;
+}
+
+body {
+  background-color: var(--lightBlack);
+  font-family: 'Ubuntu', sans-serif;
+  color: rgba(255, 255, 255, 0.658);
+}
+
+body, i, ::placeholder, button{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+i{
+  font-size: 13px;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+li{
+  list-style-type: none;
+}
+
+/************************ Giris Kayit Parola *****/
+
+.form-template {
+  background-color: #000;
+  padding: 0 0 20px 0;
+  border-radius: 30px;
+  margin: 20px auto;
+  width: 35%;
+  height: 670px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hosgeldin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(
+    30deg,
+    #0ab2e5,
+    #27eea0
+  );
+  box-shadow: 0 0 0 0 #db2c66;
+  width: 100%;
+  min-height: 150px;
+  border-radius: 30px 30px 1px 1px;
+
+  padding: 10px 25px;
+}
+
+
+.hosgeldin-title{
+color: white;
+margin-top:15px ;
+align-self: flex-start;
+}
+
+.hosgeldin-title p{
+  font-size: 14px;
+  margin-top: 7px;
+  }
+
+.hosgeldin-icon{
+width:120px;
+}
+
+.hosgeldin-icon img{
+  width: 100%;
+  }
+
+.hosgeldin-logo{
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 145px;
+}
+
+.hosgeldin-logo img{
+  width: 100%;
+}
+
+
+.form{
+  margin: 65px;
+  padding-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form p{
+/* width: 55%;*/
+font-weight: 300;
+font-size: 15px;
+line-height: 24px;
+text-transform: capitalize;
+color: #FFFFFF;
+}
+
+.form-inputs{
+width: 55%;
+display: flex;
+flex-direction: column;
+margin-bottom: 100px;
+}
+
+.form-inputs-80{
+width: 80%;
+margin-bottom: 50px;
+}
+
+.form-input{
+ position: relative;
+}
+
+
+
+.input{
+  /*margin-top: 20px;*/
+  width: 100%;
+  height: 40px;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: #393939;
+  border: none;
+  color: #c7cfd6;
+  position: relative;
+  padding-left:30px;
+  /* background-image: url(./images/Icons/search.png);
+  background-repeat: no-repeat;
+ background-position: 6px center;
+ background-size: 18px; */
+}
+
+.input-50{
+  width: 49.60%;
+}
+
+.input-icon{
+  z-index: 1;
+  position: absolute;
+ top: 32px;
+  left: 12px;
+  color: #C7CFD6;
+}
+
+.input-icon-2{
+  left: 52.5%;
+}
+
+select{
+  position: relative;
+  appearance:none;
+  cursor:pointer;
+}
+
+/* .form-select::after{
+  content: "\f063";
+  font-size:20px;
+  position: absolute;
+  top: 27px;
+  right: 13px;
+  pointer-events:none;
+} */
+
+.select-icon{
+  position: absolute;
+  top: 34px;
+  right: 15px;
+  pointer-events:none;
+}
+
+/* .input::before{
+  content:"";
+  width: 25px;
+  height: 25px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+::placeholder{
+  color: #c7cfd680;
+}
+
+.btn-blue{
+width: 80%;
+height: 40px;
+background-color: blue;
+outline: none;
+border: none;
+border-radius: 30px;
+color: white;
+transition: opacity 0.3s;
+}
+
+.btn:hover{
+  opacity: 0.85;
+}
+
+.form-content {
+  /* width: 45%; */
+  /* float: left; */
+  margin: 15px 0;
+  display: block;
+}
+
+
+.passowrd{
+  font-size:13px;
+  color: #C7CFD6 ;
+  text-align: start;
+  margin: 15px 0px 0px 5px;
+}
+.passowrd i {
+  margin-right: 5px;
+}
+
+#auth {
+  width: 100%;
+}
+
+.hesapsoru{
+  margin: 20px;
+  text-align: center;
+}
+
+.hesapsoru-link{
+  color: #8199D9;
+  transition: opacity 0.3s;
+}
+
+.hesapsoru-link:hover{
+  opacity: 0.85;
+}
+
+
+/***************  Side Bar *********************/
+
+.sidebar{
+  width: 220px;
+  min-height: 100vh;
+  background-color:#2C2D30;
+  padding: 20px 10px;
+  float: left;
+}
+
+.sidebar-logo{
+  width: 75px;
+  margin: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.sidebar-logo img{
+  width: 100%;
+}
+
+.menu{
+margin-top: 80px;
+display: grid;
+grid-template-columns: max-content;
+grid-auto-rows: auto;
+row-gap: 25px;
+}
+
+.menu-item, .nav-link{
+grid-column: 1;
+width: 200px;
+height: 50px;
+background: transparent;
+border-radius: 15px;
+padding: 15px 20px;
+color: #C7CFD6;
+}
+
+.menu-item i {
+  margin-right: 12px;
+}
+
+.active,.menu-item:hover,.nav-link:hover, .nav-link:focus{
+  color: white;
+  background: rgba(199, 207, 214, 0.08);
+}
+
+
+
+
+/******************** Ana Ekran *************************/
+
+
+main{
+  display: flex;
+
+}
+
+.anaEkran{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 55px);
+  grid-template-areas:
+  '. . . . . . . . . . . .'
+  'title title title title . . . . . . . .'
+  'line line line baş baş gon gon gon . . . .  '
+  '. . . . . . . . . . . . '
+  'cr cr cr cr cr . . s s . . .'
+  'cr cr cr cr cr . . . . . . .'
+  'cr cr cr cr cr . . . l l l .'
+  'cr cr cr cr cr . m . l l l .'
+  '. . . . .      . m . l l l . '
+  '. . . . . . . . . . . . ';
+  justify-items: start;
+  align-items: center;
+  column-gap: 15px;
+  row-gap: 12px;
+  padding-left: 30px;
+  background-color: var(--black);
+}
+
+.section-title{
+grid-area: title;
+color: white;
+font-size: 24px;
+font-weight: 400;
+}
+
+.section-title h1{
+font-weight: 400;
+}
+
+.section-line{
+grid-area: line;
+width: 300px;
+border: 1px dashed #FFFFFF;
+/* margin-left: 0px;
+margin-right: 10px; */
+}
+
+.btn-success{
+background: var(--green-grad);
+border-radius: 20px;
+border: none;
+padding: 10px 40px;
+color: white;
+font-size: 18px;
+text-transform: uppercase;
+font-weight: 500;
+cursor: pointer;
+
+}
+
+.btn-outline{
+  border: 1px solid #C7CFD6;
+border-radius: 20px;
+background-color: transparent;
+padding: 9px 50px;
+font-size: 18px;
+width: max-content;
+font-weight: normal;
+font-size: 18px;
+color: #C7CFD6;
+cursor: pointer;
+}
+
+table thead, tbody, tfoot, tr, td, th,td a{
+  color: #C7CFD6;
+}
+
+
+
+.btn-bas{
+  grid-area: baş;
+}
+
+.btn-gon{
+  grid-area: gon;
+}
+
+/****************** Card *********************/
+.bas-cards, .gon-cards{
+  grid-area: cr;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 40px;
+  margin-top: 30px;
+
+}
+
+.gon-cards{
+  margin-top: unset;
+  margin-bottom: 100px;
+}
+
+.bas-card, .gon-card{
+  display: flex;
+  width: 130px;
+  height: 125px;
+  padding: 12px 13px;
+  background-color: var(--gray-18);
+  border-radius: 15px;
+}
+
+.gon-card{
+  height: 108px;
+  padding: 12px 10px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card-details{
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.gon-card .card-details{
+  justify-content: start;
+}
+
+.gon-card .card-details .card-title{
+  margin-bottom: 5px;
+}
+.card-title{
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+}
+
+.card-details span{
+  color: var(--gray);
+}
+
+.card-icon{
+  padding: 12px;
+  width: 45px;
+  height: 45px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  background-color: var(--blue);
+  font-size: 20px;
+  text-align: center;
+}
+
+.gon-card .card-indicator{
+display: flex;
+justify-content: center;
+}
+
+.line1, .line{
+  display: block;
+  width: 5px;
+  height: 60%;
+  background-color: var(--gray-8);
+  border-radius: 30px;
+  margin-bottom: 3px;
+}
+
+.gon-card .line{
+  width: 100%;
+  height: 5px;
+  background-color: var(--green);
+}
+
+.gon-card .line1{
+  width: 65%;
+  height: 5px;
+  margin-right: 3px;
+  background-color: var(--green);
+}
+
+.line2{
+  display: block;
+  width: 5px;
+  height: 30%;
+  background-color: var(--blue);
+  border-radius: 30px;
+}
+
+.gon-card .line2{
+  width: 30%;
+  height: 5px;
+  margin-right: 3px;
+  background-color: var(--gray-18);
+}
+
+.card-2 i, .card-2 .line2 {
+background-color: var(--orange);
+}
+
+.card-3 i, .card-3 .line2 {
+background-color: var(--green);
+}
+
+.card-4 i, .card-4 .line2 {
+background-color: var(--purple);
+}
+
+.card-5 i, .card-5 .line2 {
+background-color: var(--pink);
+}
+
+
+.svg-s{
+  grid-area: s;
+  width: 100px;
+  position: relative;
+  right: 30px;
+
+}
+
+.svg-m{
+  grid-area: m;
+
+  width: 200px;
+  position: relative;
+  left: 20px;
+  bottom: 10px;
+}
+
+.svg-l{
+  grid-area: l;
+  width: 250px;
+  position: relative;
+  right: 20px;
+}
+
+/****************************** Profil ******************************/
+
+.profilEkran{
+  background-color: var(--black);
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 55px);
+  /* grid-auto-rows: auto; */
+grid-template-areas:
+  '. . . . . . . . . . . .'
+  'title title title title . . . . . . . .'
+  'line line line baş baş gon gon gon . . . .  '
+  '. . . . . . . . . . . . '
+  'd d d d . . . . . l l .'
+  'd d d d . . . . . l l .'
+  'd d d d . . . . . . . .'
+  'd d d d . . . . s . . .'
+  '. . . . .      . . . s . m m ';
+
+
+  justify-items: start;
+  align-items: center;
+  column-gap: 15px;
+  row-gap: 12px;
+  padding-left: 30px;
+}
+
+
+.profil-details{
+  grid-area: d;
+  display: flex;
+  flex-direction: column;
+}
+
+.profil-data{
+  width: 320px;
+  height: 50px;
+  background-color: var(--gray-8);
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  margin: 10px 0;
+}
+
+.data-icon i{
+  width: 50px;
+  height: 50px;
+background-color: var(--gray-8);
+border-radius: 15px;
+margin-right:10px ;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+}
+
+
+.data-info{
+
+}
+
+.data-info span{
+font-size: 12px;
+color: var(--gray);
+}
+
+.data-info p{
+  color: white;
+  }
+
+  .s2{
+    width: 250px;
+    right: 25px;
+    top:15px;
+  }
+
+  .m2{
+    left: 42.5px;
+    top: 61px;
+    width: 225px;
+  }
+
+  .l2{
+    width: 310px;
+    right: 80px;
+    top: 15px;
+  }
+
+  /******************** DGS *****************/
+
+.basEkran{
+background-color: var(--black);
+position: relative;
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+grid-template-rows: repeat(10, 55px);
+/* grid-auto-rows: auto; */
+grid-template-areas:
+'. . . . . . . . . . . .'
+'title title title title . . . . . . . .'
+'line line line baş baş gon gon gon . . . .  '
+
+'f f f f f f f f f f f f'
+'f f f f f f f f f f f f'
+'f f f f f f f f f f f f'
+'f f f f f f f f f f f f'
+'f f f f f f f f f f f f '
+'f f f f f f f f f f f f'
+'f f f f f f f f f f f f'
+'f f f f f f f f f f f f';
+
+justify-items: start;
+align-items: start;
+column-gap: 15px;
+row-gap: 12px;
+padding-left: 30px;
+}
+
+.bas-title{
+  margin-left: -5px;
+}
+
+.bas-line{
+  margin-top: 20px;
+}
+
+.bas-form{
+  grid-area: f;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(7, 55px);
+/* grid-auto-rows: auto; */
+justify-items: start;
+align-items: start;
+column-gap: 15px;
+row-gap: 12px;
+}
+
+.dgs .bas-form{
+  grid-template-areas:
+
+'f1 f1 f1 . f3 f3 f3 f3 . . . l'
+'f1 f1 f1 . f3 f3 f3 f3 . . . l '
+'f1 f1 f1 . f3 f3 f3 f3 . . . l'
+/* '.  .  .  .  .  .  .  .  . . . l' */
+'f2 f2 f2 . fp fp fp fp . . . l '
+'f2 f2 f2 . fp fp fp fp . . . l '
+'f2 f2 f2 . fp fp fp fp . b b l '
+'.  .  .  .  .  .  .  .  . b b l';
+}
+
+
+.btn-icon{
+font-size:16px ;
+margin-right: 10px;
+transform: rotateY(180deg);
+}
+
+.form-temp-inputs .form-input{
+margin-left: 20px;
+}
+
+.form-title{
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.bas-input{
+width: 250px;
+}
+
+.form-temp{
+
+}
+
+.form-temp > i{
+  margin-right: 5px;
+  font-size: 16px;
+  color: white;
+}
+
+.form-temp h3{
+display: inline-block;
+color: white;
+}
+
+.form-temp1{
+grid-area: f1;
+}
+
+.form-temp2{
+grid-area: f2;
+}
+
+.form-temp3{
+grid-area: f3;
+/* padding-left: 50px; */
+}
+
+.form-upload{
+  grid-area: fp;
+  /* padding-left: 50px; */
+}
+
+.upload-details{
+  padding-left: 20px;
+  text-align: center;
+}
+
+.upload-details img{
+  width: 60px;
+  margin: 15px 0;
+}
+
+.upload-details p{
+  width: 100%;
+  margin: 10px 0;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.upload-details .btn-upload{
+  margin: 15px 0px;
+  padding: 8px 5px;
+  border-radius: 15px;
+  width: 150px;
+  display: inline-block;
+border: 2px solid var(--seledyn);
+color: var(--seledyn);
+}
+
+.upload-details .btn-upload i{
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.bas-submit{
+  grid-area: b;
+  align-self: flex-end;
+  position: relative;
+    top: 46px;
+}
+.btn-submit{
+border-radius: 15px;
+border: none;
+padding: 10px 20px;
+color: white;
+font-size: 16px;
+text-transform: uppercase;
+font-weight: 400;
+cursor: pointer;
+}
+
+.bas-indicators{
+  grid-area: l;
+}
+
+.bas-indicators .long-line1{
+  width: 5px;
+  height: 100px;
+  background-color: var(--gray-18);
+  border-radius: 30px;
+  margin-bottom: 3px;
+}
+
+.bas-indicators .long-line2{
+  width: 5px;
+  height: 400px;
+  border-radius: 30px;
+  margin-bottom: 3px;
+}
+
+
+
+.bg-green{
+  background-color: var(--green);
+}
+
+.bg-orange{
+  background-color: var(--orange);
+}
+
+.bg-blue{
+  background-color: var(--blue);
+}
+
+.bg-pink{
+  background-color: var(--pink);
+}
+
+.bg-purple{
+  background-color: var(--purple);
+}
+
+
+/****************************** Yaz Okul **********************/
+
+.yaz .bas-form{
+  grid-template-areas:
+
+'f1 f1 f1 . fp fp fp fp . . . l'
+'f1 f1 f1 . fp fp fp fp . . . l '
+'f1 f1 f1 . fp fp fp fp . . . l'
+'.  .  .  .  .  .  .  .  . . . l'
+'f2 f2 f2 . . . . . . . . l '
+'f2 f2 f2 . . . . . . . . l '
+'f2 f2 f2 . . . . . . b b l ';
+/* '.  .  .  .  .  .  .  .  . b b l'; */
+}
+
+/********** Ders In *************/
+
+.dersin .bas-form{
+  grid-template-areas:
+
+'f1 f1 f1 . f3 f3 f3 f3 . . . l'
+'f1 f1 f1 . f3 f3 f3 f3 . . . l '
+'f1 f1 f1 . f3 f3 f3 f3 . . . l'
+'. . .  .  .  .  .  . . . . l'
+'f2 f2 f2 . fp fp fp fp . . . l '
+'f2 f2 f2 . fp fp fp fp . . . l '
+'f2 f2 f2 . fp fp fp fp . b b l '
+'. . .  .  .  .  .  . . b b l';
+/* 'f2 f2 f2 .  .  .  .  . . b b l '; */
+
+grid-template-rows: repeat(7, 50px);
+}
+
+.dersin .bas-submit{
+    top: unset;
+}

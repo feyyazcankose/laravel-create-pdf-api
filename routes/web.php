@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [AdminKontrol::class, 'home'])->name('home');
+Route::middleware('auth')->get('/home', [AdminKontrol::class, 'home'])->name('home');
 //Route::get('/auth', [Userauth::class, 'user']);
 
 
@@ -51,7 +51,7 @@ Route::get('basvur/ders',function (){return  view('basvuru.ders',["durum"=>"0"])
 
 //Companent
 //Route::get('basvurular',function (){return  view('companent.basvurularim');})->name('basvurularim');
-Route::get('basvur',[AdminKontrol::class, 'basvurular'])->name('basvuru');
+Route::get('basvur',[AdminKontrol::class, 'home'])->name('basvuru');
 
 //PDF Yükleme
 Route::post('pdfupload',[PdfUpload::class, 'upload'])->name('pdf_yukle');
