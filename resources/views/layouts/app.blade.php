@@ -7,8 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>Kocaeli Başvuru Oluşturucu </title>
+    <link rel="shortcut icon" href="{{ asset('/images/logo-blue.png') }}" type="image/x-icon" >
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -35,7 +35,7 @@
         <main>
           <aside class="sidebar">
              <div class="sidebar-logo">
-               <img src="{{ asset('/images/logo-blue.png') }}" alt="">
+               <a href="{{ route('home') }}"><img src="{{ asset('/images/logo-blue.png') }}" alt=""></a>
              </div>
 
              <div class="menu">
@@ -102,27 +102,23 @@
                      </li>
                @endif
 
-
-                   <li class="nav-item dropdown">
-                       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                           {{ Auth::user()->name }}
+               <li class="nav-item">
+                   <a class="nav-link" href="{{ route('profil') }}">{{ Auth::user()->name}}</a>
+               </li>
+               <li class="nav-item ">
+                       <a class="nav-link" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                           {{ __('Çıkış Yap') }}
                        </a>
 
-                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                           <a class="dropdown-item" href="{{ route('logout') }}"
-                              onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                               {{ __('Çıkış Yap') }}
-                           </a>
 
 
+                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                           @csrf
+                       </form>
 
-                           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                               @csrf
-                           </form>
-
-                       </div>
-                   </li>
+               </li>
                @endguest
            </aside>
 
