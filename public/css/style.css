@@ -60,6 +60,11 @@ li{
   list-style-type: none;
 }
 
+.menu-item i,.nav-link i{
+  font-size: 18px;
+  padding-right: 20px;
+}
+
 /************************ Giris Kayit Parola *****/
 
 .form-template {
@@ -411,7 +416,7 @@ cursor: pointer;
 .btn-outline:hover{
 
   color: #393939;
-  background-color:#C7CFD6; 
+  background-color:#C7CFD6;
 
 }
 

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Kocaeli Başvuru Oluşturucu </title>
+    <title>KOU Başvuru Oluşturucu</title>
     <link rel="shortcut icon" href="{{ asset('/images/logo-blue.png') }}" type="image/x-icon" >
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -16,7 +16,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -37,10 +37,14 @@
              <div class="sidebar-logo">
                <a href="{{ route('home') }}"><img src="{{ asset('/images/logo-blue.png') }}" alt=""></a>
              </div>
-
+             @if(Auth::user()->rol==2)
+             <p class="text-center mt-3">Admin Kontrol <br> Paneli</p>
+             @else
+             <p class="text-center mt-3">KOU Başvuru <br> Oluşturucu</p>
+             @endif
              <div class="menu">
-               <a href="{{ route('home') }}" class="menu-item active">
-                 <i class="fa fa-bars"></i>
+               <a href="{{ route('home') }}" class="menu-item">
+                 <i class="bi bi-collection-fill"></i>
                  <span>Ana Ekran</span>
                </a>
 
@@ -61,7 +65,9 @@
                @if(Auth::user()->rol==1)
                <li class="nav-item dropdown">
                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                     Başvur
+                <i class="bi bi-plus-circle-fill"></i>
+
+                     <span>Başvur</span>
                  </a>
 
                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -91,25 +97,38 @@
 
                @else
                <li class="nav-item">
-                 <a class="nav-link" href="{{ route('rapor') }}">Raporlar</a>
+                 <a class="nav-link" href="{{ route('rapor') }}">
+                   <i class="bi bi-pie-chart-fill"></i>
+                   <span>Raporlar</span>
+                 </a>
                    </li>
 
                    <li class="nav-item">
-                     <a class="nav-link" href="{{ route('kullanici') }}">Kullanıcılar</a>
+                     <a class="nav-link" href="{{ route('kullanici') }}">
+                       <i class="bi bi-people-fill"></i>
+                        <span>Kullanıcılar</span>
+                     </a>
                        </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="{{ route('basvuru') }}">Başvurular</a>
+                         <a class="nav-link" href="{{ route('basvuru') }}">
+                        <i class="bi bi-file-text-fill"></i>
+                           <span>Başvurular</span>
+                         </a>
                      </li>
                @endif
 
                <li class="nav-item">
-                   <a class="nav-link" href="{{ route('profil') }}">{{ Auth::user()->name}}</a>
+                   <a class="nav-link" href="{{ route('profil') }}">
+                     <i class="bi bi-person-fill"></i>
+                      <span>{{ Auth::user()->name}}</span>
+                   </a>
                </li>
                <li class="nav-item ">
                        <a class="nav-link" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                           {{ __('Çıkış Yap') }}
+                           <i class="bi bi-x-circle-fill"></i>
+                           <span>Çıkış Yap</span>
                        </a>
 
 
