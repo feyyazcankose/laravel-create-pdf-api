@@ -2,7 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>KOU Başvuru Oluşturucu</title>
+    <link rel="shortcut icon" href="{{ asset('/images/logo-blue.png') }}" type="image/x-icon" >
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
