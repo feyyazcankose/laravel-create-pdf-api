@@ -43,10 +43,12 @@
              <p class="text-center mt-3">KOU Başvuru <br> Oluşturucu</p>
              @endif
              <div class="menu">
-               <a href="{{ route('home') }}" class="menu-item">
-                 <i class="bi bi-collection-fill"></i>
-                 <span>Ana Ekran</span>
-               </a>
+               <li class="nav-item">
+                 <a href="{{ route('home') }}" class="nav-link">
+                   <i class="bi bi-collection-fill"></i>
+                   <span>Ana Ekran</span>
+                 </a>
+               </li>
 
                @guest
                    @if (Route::has('login'))
