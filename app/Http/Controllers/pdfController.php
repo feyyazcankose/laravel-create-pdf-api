@@ -45,6 +45,15 @@ class pdfController extends Controller
           'sinif'=>$user->sinif,
           'fakulte'=>$user->fakulte,
           'email'=>$user->email,
+          'tel'=>$request->tel,
+          'ders_kod1'=>$request->ders_kod1,
+          'ders_ad1'=>$request->ders_ad1,
+          'ders_kredi1'=>$request->ders_kredi1,
+
+          'ders_kod2'=>$request->ders_kod2,
+          'ders_ad2'=>$request->ders_ad2,
+          'ders_kredi2'=>$request->ders_kredi2,
+
       ];
 
         $pdf = PDF::loadView('pdf.yazokulu',$data);
@@ -64,6 +73,13 @@ class pdfController extends Controller
           'sinif'=>$user->sinif,
           'fakulte'=>$user->fakulte,
           'email'=>$user->email,
+          'tel'=>$request->tel,
+          'ders_akts1'=>$request->ders_akts1,
+          'ders_basari1'=>$request->ders_basari1,
+          'ders_akts2'=>$request->ders_akts2,
+          'ders_basari2'=>$request->ders_basari2,
+
+
       ];
 
         $pdf = PDF::loadView('pdf.dersin',$data);
@@ -86,6 +102,10 @@ class pdfController extends Controller
           'sinif'=>$user->sinif,
           'fakulte'=>$user->fakulte,
           'email'=>$user->email,
+          'tel'=>$request->tel,
+          'diploma'=>$request->diploma,
+          'mezun'=>$request->mezun,
+          'merkez'=>$request->merkez,
       ];
 
         $pdf = PDF::loadView('pdf.dgs',$data);
@@ -101,10 +121,16 @@ class pdfController extends Controller
           'name'=> $user->name,
           'tc'=> $user->tc,
           'ogrenci'=>$user->ogrenci,
-          'bolum'=>$user->bolum,
+          'bolum'=>$request->bolum,
           'sinif'=>$user->sinif,
-          'fakulte'=>$user->fakulte,
+          'fakulte'=>$request->fakulte,
           'email'=>$user->email,
+          'tel'=>$request->tel,
+          'notortalama'=>$request->notortalama,
+          'giris_yil'=>$request->giris_yil,
+          'taban'=>$request->taban,
+
+          
       ];
 
         $pdf = PDF::loadView('pdf.yatay',$data);

@@ -68,7 +68,7 @@
                      <a class="dropdown-item" href="{{ route('basvur_cap') }}">ÇAP Başvurusu</a>
                      <a class="dropdown-item" href="{{ route('basvur_yaz') }}">Yaz Ders Başvurusu</a>
                      <a class="dropdown-item" href="{{ route('basvur_dgs') }}">DGS Başvurusu</a>
-                     <a class="dropdown-item" href="{{ route('basvur_yatay') }}">Çap Başvurusu</a>
+                     <a class="dropdown-item" href="{{ route('basvur_yatay') }}">Yatay Geçiş Başvurusu</a>
                      <a class="dropdown-item" href="{{ route('basvur_ders') }}">Ders İntikabı Başvurusu</a>
 
 

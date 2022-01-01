@@ -32,7 +32,7 @@
     <div style="
     margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: {{ $email}}</div><br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;" >Telefon No: </div>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;" >Telefon No: {{$tel}}</div>
      <h2 style=" font-weight: normal;
      ">
            Kayıtlı Olduğu Üni Bilgileri
@@ -41,17 +41,17 @@
         margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Üniversite Adı: Kocaeli Üniversitesi</div> <br>
 
         <div style="
-        margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Giris Yılı: </div><br>
+        margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Giris Yılı: {{$giris_yil}}</div><br>
           <div style="
-          margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Genel Not Ortalaması: </div>
+          margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Genel Not Ortalaması: {{$notortalama}}</div>
           <h2 style=" font-weight: normal;
           ">Yapılacak YG Programı  </h2>
           <div style="
-          margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Fakülte: {{ $fakulte}}</div><br>
+          margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Fakülte: {{$fakulte}}</div><br>
            <div style="
-           margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Bölüm: {{ $bolum}}</div><br>
+           margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Bölüm: {{$bolum}}</div><br>
             <div style="
-            margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Taban Puan: </div>
+            margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;">Taban Puan: {{$taban}}</div>
 
           <div style="
            position: fixed;

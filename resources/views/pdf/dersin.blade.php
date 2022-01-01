@@ -38,7 +38,7 @@
     <div style="
     margin-bottom: 0px; border-bottom: 1px solid black;  width:fit-content;">Email: {{ $email}}</div><br>
     <div style="
-    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;" >PhoneNo: </div>
+    margin-bottom: 0px; border-bottom: 1px solid black; width:fit-content;" >Telefon Numarası: {{$tel}}</div>
 
 <table style="  border-collapse: collapse;  width: 100%; border: 1px solid black;  margin-left: auto;
 margin-right: auto; margin-top:70px" >
@@ -50,15 +50,15 @@ margin-right: auto; margin-top:70px" >
     </tr>
     <tr>
         <td style="  border: 1px solid black;">1</td>
-         <td style="  border: 1px solid black;">Maria Anders</td>
-        <td style="  border: 1px solid black;">>Germany</td>
+         <td style="  border: 1px solid black;">{{ $ders_akts1 }}</td>
+        <td style="  border: 1px solid black;">{{ $ders_basari1 }}</td>
 
 
     </tr>
     <tr>
         <td style="  border: 1px solid black;">2</td>
-        <td style="  border: 1px solid black;">Francisco Chang</td>
-        <td style="  border: 1px solid black;">Mexico</td>
+        <td style="  border: 1px solid black;">{{ $ders_akts2 }}</td>
+        <td style="  border: 1px solid black;">{{ $ders_basari2 }}</td>
 
     </tr>
   </table>
