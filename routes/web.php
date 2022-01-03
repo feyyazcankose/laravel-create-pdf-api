@@ -9,6 +9,7 @@ use App\Http\Controllers\PdfListele;
 use App\Http\Controllers\PdfGuncelle;
 use App\Http\Controllers\pdfController;
 use App\Http\Controllers\AdminKontrol;
+use App\Http\Controllers\GoogleUpload;
 use App\Http\Controllers\Profil;
 use App\Http\Controllers\Rapor;
 
@@ -29,6 +30,7 @@ use App\Http\Controllers\Rapor;
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Auth::routes();
 
@@ -60,7 +62,7 @@ Route::post('pdfupload',[PdfUpload::class, 'upload'])->name('pdf_yukle');
 //PDF Listeleme
 //Route::get('sonuc' ,[PdfListele::class,"sonuclar"])->name('sonuc');
 Route::get('basvuru/listele' ,[PdfListele::class,"listeleAuth"])->name('basvurularim');
-Route::get('profil' ,[Profil::class,"profilListele"])->name('profil');
+Route::middleware('auth')->get('profil' ,[Profil::class,"profilListele"])->name('profil');
 
 
 

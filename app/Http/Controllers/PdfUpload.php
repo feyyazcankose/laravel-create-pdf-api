@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 use App\Models\Pdf;
 class PdfUpload extends Controller
@@ -37,12 +38,13 @@ class PdfUpload extends Controller
 
           $filename=$username.'_'.$user->ogrenci.'_'.$time.'.'.$request->pdf->getClientOriginalExtension();
           //$yukle=$request->pdf->move(public_path('pdf/'.$basvuru_tip),$filename);
-          $yukle=$request->pdf->storeAs("public/pdf/".$basvuru_tip,$filename);
+          //$yukle=$request->pdf->storeAs("public/pdf/".$basvuru_tip,$filename);
 
           /*$path=str_replace("file:///","",public_path());
           $path=$path.'\\pdf\\'.$basvuru_tip.'\\'.$filename;*/
           $durum="";
-          $yukle=str_replace("public","storage",$yukle);
+          $yukle=Storage::disk('google')->putFileAs('',$request->pdf, $filename);
+          $url = Storage::disk('google')->url($filename);
           if($yukle)
           {
               $durum="başarılı";
@@ -50,7 +52,7 @@ class PdfUpload extends Controller
                 "ogrenci_id"=>$user->_id,
                 "filename"=>$filename,
                 "basvuru_tipi"=>$basvuru_tip,
-                "url"=>$yukle,
+                "url"=>$url,
                 'durum'=>1,
               ]);
 
