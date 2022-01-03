@@ -17,10 +17,16 @@ class PdfUpload extends Controller
         $username=strtolower($user->name);
         $username=str_replace(' ','_',$username);
         $username=str_replace('ı','i',$username);
+        $username=str_replace('İ','i',$username);
         $username=str_replace('ü','u',$username);
+        $username=str_replace('Ü','u',$username);
         $username=str_replace('ö','o',$username);
+        $username=str_replace('Ö','o',$username);
         $username=str_replace('ğ','g',$username);
+        $username=str_replace('Ğ','g',$username);
         $username=str_replace('ç','c',$username);
+        $username=str_replace('Ç','c',$username);
+
 
 
         if($request!=null)
