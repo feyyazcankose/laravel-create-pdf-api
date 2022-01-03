@@ -14,7 +14,8 @@ class PdfUpload extends Controller
 
 
         //i,ü,ö,ğ,ç Formatlı
-        $username=str_replace(' ','_',strtolower($user->name));
+        $username=strtolower($user->name);
+        $username=str_replace(' ','_',$username);
         $username=str_replace('ı','i',$username);
         $username=str_replace('ü','u',$username);
         $username=str_replace('ö','o',$username);
