@@ -72,7 +72,7 @@
 
             <form  action="{{ route('pdf_yukle') }}" method="post" enctype="multipart/form-data">
               @csrf
-              <input input-100 type="hidden" name="dgs" value="ders">
+              <input input-100 type="hidden" name="tip" value="dgs">
 
               <div class="mb-5 text-center">
                   <img class="upload-image" src="{{asset('images/upload_turuncu.svg')}}" alt="">
