@@ -45,7 +45,7 @@
 
        </div>
 
-       <form method="POST" action="{{ route('register') }}" class="form">
+       <form method="POST" action="{{ route('register') }}" class="form" id="form">
            @csrf
            <div class="form-input rows-80 form-input rows ">
 
@@ -108,11 +108,15 @@
            <div class="form-input row">
              <div class="col-md-6">
                <label for="fakulte" ></label>
-                 <select class="input" aria-label="Default select example" name="fakulte">
-                   <option selected>Fakülte Seçiniz</option>
-                   <option name="fakulte" value="Teknoloji Fakültesi">Teknoloji Fakültesi</option>
+                 <select class="input" aria-label="Default select example" onclick="control()" name="fakulte" id="fakulte" required>
+                   <option >Fakülte Seçiniz</option>
+                   <option name="fakulte"  value="Teknoloji Fakültesi">Teknoloji Fakültesi</option>
                    <option name="fakulte" value="Mühendislik Fakültesi">Mühendislik Fakültesi</option>
-                   <option name="fakulte" value="Eğitim Fakültesi">Eğitim Fakültesi</option>
+                   <option name="fakulte"  value="Eğitim Fakültesi">Eğitim Fakültesi</option>
+                   <option name="fakulte"  value="İktisadi ve İdari Bilimler Fakültesi">İktisadi ve İdari Bilimler Fakültesi</option>
+                   <option name="fakulte"  value="Mimarlık ve Tasarım Fakültesi">Mimarlık ve Tasarım Fakültesi</option>
+
+
                  </select>
                    @error('fakulte')
                        <span class="invalid-feedback" role="alert">
@@ -123,11 +127,13 @@
 
               <div class="col-md-6">
                 <label for="bolum" ></label>
-                  <select class="input" aria-label="Default select example" name="bolum">
-                    <option selected>Bölüm Seçiniz</option>
-                    <option name="bolum" value="Bilişim Sistemleri">Bilişim Sistemleri</option>
-                    <option name="bolum" value="Makina Mühendisliği">Makina Mühendisliği</option>
-                    <option name="bolum" value="İnşaat Mühendisliği">İnşaat Mühendisliği</option>
+                  <select class="input" aria-label="Default select example" name="bolum" id="bolum" required  disabled style="background-color: #5c5c5c;" onclick="control_bolum();">
+                    <option name="bolum" value="1">Bölüm Seçiniz</option>
+                    <option name="bolum" value="2">Bölüm Seçiniz</option>
+                    <option name="bolum" value="3">Bölüm Seçiniz</option>
+                    <option name="bolum" value="4">Bölüm Seçiniz</option>
+                    <option name="bolum" value="5">Bölüm Seçiniz</option>
+
                   </select>
                     @error('bolum')
                         <span class="invalid-feedback" role="alert">
@@ -207,7 +213,149 @@
 </div>
 
 
+  <script>
+    tekno=[
+      'Bilişim Sistemleri Mühendisliği',
+      'Otomasyon Mühendisliği',
+      'Biyomedikal Mühendisliği',
+      'Enerji Mühendisliği',
+      'Yazılım Mühendisği',
+    ];
 
+    muhendislik=[
+      'Matematik Mühendisliği',
+      'Mekatronik Mühendisliği',
+      'Makina Mühendisliği',
+      'İnşaat Mühendisliği',
+      'Bilgisayar Mühendisği',
+    ];
+
+    egitim=[
+      'Ana Sınıfı Öğretmenliği',
+      'Sosyal Bilimler Öğretmenliği',
+      'Siyaset Bilimi',
+      'Kimya Öğretmenliği',
+      'Bilgisayar Öğretmenliği',
+    ];
+
+    idari=[
+      'İşletme',
+      'İktisat',
+      'Çalışma Ekonomisi ve Endüstri İlişkileri',
+      'Uluslararası ilişkiler',
+      'Siyaset Bilimi ve Kamu Yönetimi'
+    ];
+
+    mimarlik=[
+      'Mimarlık',
+      'İç mimarlık',
+      'Şehir ve Bölge Planlama',
+      'Endüstriyel Tasarım',
+      'Dış mimarlık'
+    ];
+    defaultbolum=[
+      'Bölüm Seçiniz',
+      'Bölüm Seçiniz',
+      'Bölüm Seçiniz',
+      'Bölüm Seçiniz',
+      'Bölüm Seçiniz',
+
+    ];
+
+    function control() {
+      fakulte= document.getElementById('fakulte');
+      bolum = document.getElementById('bolum');
+      console.log(fakulte.value);
+
+        if(fakulte.value!='Fakülte Seçiniz')
+        {
+          bolum.disabled=false;
+          bolum.style.backgroundColor='#393939';
+          fakulte.style.border='none';
+          bolum.style.border='none';
+        }
+        else if(fakulte.value=='Fakülte Seçiniz')
+        {
+          bolum.disabled=true;
+          bolum.style.backgroundColor= '#5c5c5c';
+          for (var i = 0; i < tekno.length; i++) {
+            bolum.options[i].value=defaultbolum[i];
+            bolum.options[i].innerHTML=defaultbolum[i];
+          }
+        }
+        if(fakulte.value=="Teknoloji Fakültesi")
+        {
+          for (var i = 0; i < tekno.length; i++) {
+            bolum.options[i].value=tekno[i];
+            bolum.options[i].innerHTML=tekno[i];
+          }
+        }
+        else if(fakulte.value=="Mühendislik Fakültesi")
+        {
+          for (var i = 0; i < tekno.length; i++) {
+            bolum.options[i].value=muhendislik[i];
+            bolum.options[i].innerHTML=muhendislik[i];
+          }
+        }
+        else if(fakulte.value=="Eğitim Fakültesi")
+        {
+          for (var i = 0; i < tekno.length; i++) {
+            bolum.options[i].value=egitim[i];
+            bolum.options[i].innerHTML=egitim[i];
+          }
+        }
+        else if(fakulte.value=="İktisadi ve İdari Bilimler Fakültesi")
+        {
+          for (var i = 0; i < tekno.length; i++) {
+            bolum.options[i].value=idari[i];
+            bolum.options[i].innerHTML=idari[i];
+          }
+        }
+
+        else if(fakulte.value=="Mimarlık ve Tasarım Fakültesi")
+        {
+          for (var i = 0; i < tekno.length; i++) {
+            bolum.options[i].value=mimarlik[i];
+            bolum.options[i].innerHTML=mimarlik[i];
+          }
+        }
+
+
+    }
+
+      const form = document.getElementById('form');
+
+      form.addEventListener('submit', (event) => {
+        fakulte= document.getElementById('fakulte');
+        bolum = document.getElementById('bolum');
+        if(fakulte.value=='Fakülte Seçiniz' )
+        {
+          event.preventDefault();
+          fakulte.style.border='1px solid red';
+          console.log("Fakülte girlmedi");
+        }
+        else
+          fakulte.style.border='none';
+
+        if(bolum.value=='1')
+        {
+          event.preventDefault();
+          console.log("bölüm girlmedi");
+          bolum.style.border='1px solid red';
+        }
+        else
+          fakulte.style.border='none';
+    });
+
+    function control_bolum(){
+      bolum = document.getElementById('bolum');
+      if(bolum.value!='1')
+      {
+        bolum.style.border='none';
+      }
+
+    }
+  </script>
 
 
   </body>
