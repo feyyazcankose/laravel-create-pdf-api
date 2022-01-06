@@ -18,6 +18,10 @@
 
 </head>
 <body>
+  <div style="  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 14px;"> 6/1/2022</div>
 
     <h1 style="text-align:center;font-weight: normal;  ">Kocaeli Üniversitesi</h1>
     <div style="font-weight: normal; text-align:center; font-size:20px;">Çap Başvuru Formu </div>
