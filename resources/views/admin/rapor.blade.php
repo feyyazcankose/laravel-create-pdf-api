@@ -9,12 +9,56 @@
     color:#2C2D30;
   }
   .card-body{
-    color:#2C2D30;
+    color:white;
 
   }
+
+  .kartlar {
+			display: flex;
+		}
+
+		.kart {
+			padding: 10px 0px 10px 30px;
+			color: white;
+			border-radius: 10px;
+			font-size: 18px;
+		}
+
+		.kart span {
+			margin-bottom: 5px;
+			display: inline-block;
+		}
+
+		.kart i {
+			margin-right: 8px;
+			margin-bottom: 5px;
+			display: inline-block;
+		}
+
+		.kart p {
+			font-size: 12px;
+			color: rgba(255, 255, 255, 0.733);
+		}
+
+
+		.blue-bk {
+			background-color: rgb(29, 112, 236);
+		}
+
+		.red-bk {
+			background-color: rgb(236, 29, 63);
+		}
+
+		.orange-bk {
+			background-color: rgb(236, 188, 29);
+		}
+
+		.green-bk {
+			background-color: rgb(29, 236, 122);
+		}
 </style>
 <div class="container">
-    <div class="row ">
+    <div class="row kartlar">
 
 
         <div class="col-md-6 mt-5 ml-3">
@@ -33,7 +77,7 @@
 
     <div class="row my-5">
       <div class="col-md-6  mt-5">
-          <div class="card">
+          <div class="card kart blue-bk">
               <div class="card-body">
                     <div class="mb-4">
                       Bekleyen Başvurular: {{ $bekleyen }}
@@ -42,7 +86,7 @@
           </div>
       </div>
       <div class="col-md-6 mt-5">
-          <div class="card">
+          <div class="card kart red-bk">
 
               <div class="card-body">
                 <div class="mb-4">
@@ -53,7 +97,7 @@
       </div>
 
       <div class="col-md-6 mt-5">
-          <div class="card">
+          <div class="card kart orange-bk">
 
               <div class="card-body">
                 <div class="mb-4">
@@ -64,7 +108,7 @@
       </div>
 
       <div class="col-md-6 mt-5">
-          <div class="card">
+          <div class="card kart green-bk">
 
               <div class="card-body">
                 <div class="mb-4">
@@ -75,7 +119,7 @@
       </div>
 
       <div class="col-md-6 mt-5">
-          <div class="card">
+          <div class="card kart green-bk">
 
               <div class="card-body">
                 <div class="mb-4">

@@ -30,6 +30,9 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  @php
+    date_default_timezone_set("Europe/Istanbul");
+  @endphp
     <div id="app">
 
         <main>
